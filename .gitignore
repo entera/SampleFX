@@ -1,0 +1,9 @@
+# gradle cache and build files.
+.gradle/
+build/
+
+# intellij project files.
+.idea/
+*.iml
+*.ipr
+*.iws
