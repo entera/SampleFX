@@ -1,0 +1,26 @@
+apply plugin: "groovy"
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    // groovy compiler and library.
+    compile "org.codehaus.groovy:groovy-all:2.4.1"
+
+    // google core libraries and dependency injector.
+    compile "com.google.guava:guava:18.0"
+    compile "com.google.inject:guice:4.0-beta5"
+
+    // junit and spock test framework, hamcrest assertions and mocking.
+    testCompile module("org.spockframework:spock-core:1.0-groovy-2.4") {
+        dependency "junit:junit:4.12"
+    }
+    testCompile "cglib:cglib-nodep:2.2.2"
+    testCompile "org.objenesis:objenesis:1.2"
+    testCompile "org.hamcrest:hamcrest-all:1.3"
+
+    // javafx test framework.
+    testCompile "org.testfx:testfx-core:4.0.+"
+    testCompile "org.testfx:testfx-junit:4.0.+"
+}

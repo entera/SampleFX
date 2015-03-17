@@ -1,0 +1,14 @@
+// name of root project.
+rootProject.name = "SampleFX"
+
+// list of subprojects.
+include "samplefx"
+//include "samplefx-samples"
+
+// build files of subprojects.
+rootProject.children.each { project ->
+    def projectDir = new File(project.name)
+    project.name = projectDir.name
+    project.projectDir = projectDir
+    project.buildFileName = "${projectDir.name}.gradle"
+}

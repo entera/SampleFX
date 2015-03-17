@@ -1,0 +1,49 @@
+// add assemble and clean tasks.
+apply plugin: "base"
+
+// configuration for the root project.
+project(":") {
+    // task to add gradle wrapper files.
+    task wrapper(type: Wrapper, group: "build setup") {
+        gradleVersion = "2.3"
+    }
+
+    // task to print gradle and groovy versions.
+    task gradleVersion(group: "help") << {
+        println "Gradle version: ${project.gradle.gradleVersion}"
+        println "Groovy version: ${GroovySystem.version}"
+    }
+}
+
+// configuration for all projects.
+allprojects { project ->
+    // task to create main and test source directories.
+    task sourceDirs(group: "build setup") << {
+        if (project != rootProject) {
+            sourceSets*.allSource.srcDirs*.each { it.mkdirs() }
+            sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+        }
+    }
+}
+
+// configuration for all subprojects.
+subprojects {
+    // provide java configurations and tasks.
+    apply plugin: "java"
+
+    // maven repositories for dependencies.
+    repositories {
+        if (project.hasProperty("useMavenLocal")) {
+            mavenLocal()
+        }
+    }
+
+    // source code compatible to java 8.
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    // configure javadoc task for java 8.
+    javadoc {
+        options.addStringOption("Xdoclint:none", "-quiet")
+    }
+}
