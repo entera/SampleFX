@@ -1,0 +1,33 @@
+.titled-pane > .title {
+    -fx-background-radius: 0;
+}
+.titled-pane {
+    _-fx-inner-border: red;
+}
+
+.tool-bar {
+    _-fx-background-insets: 1;
+    _-fx-background-color: derive(-fx-color, -23%);
+}
+
+.titled-pane > .content {
+    _-fx-border-width: 0 0 0 0;
+    _-fx-border-insets: -1 -1 -1 0;
+}
+.titled-pane > .title {
+    _-fx-border-color: red;
+    _-fx-border-width: 0;
+    -fx-padding: 0;
+}
+
+.tool-bar {
+    -fx-padding: 0;
+}
+
+.toggle-button {
+    -fx-outer-border: none;
+}
+
+.toggle-button:selected {
+    -fx-outer-border: derive(-fx-color, -23%);
+}

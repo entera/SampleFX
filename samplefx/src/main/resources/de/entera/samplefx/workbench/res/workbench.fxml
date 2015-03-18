@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="container" prefHeight="550.0" prefWidth="700.0" stylesheets="@workbench.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane>
+         <top>
+            <ToolBar BorderPane.alignment="CENTER">
+              <items>
+                <Button mnemonicParsing="false" text="Button" />
+                  <Region minWidth="-Infinity" />
+                  <Button mnemonicParsing="false" text="Button" />
+              </items>
+            </ToolBar>
+         </top>
+         <bottom>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" rotate="180.0" BorderPane.alignment="CENTER">
+              <items>
+                <Button mnemonicParsing="false" rotate="180.0" text="Task Output" />
+              </items>
+            </ToolBar>
+         </bottom>
+         <left>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <Group>
+                     <children>
+                        <AnchorPane prefWidth="200.0" rotate="-90.0">
+                           <children>
+                              <ToolBar layoutY="200.0" nodeOrientation="RIGHT_TO_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+                                <items>
+                                  <Button mnemonicParsing="false" text="Layers" />
+                                </items>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Group>
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <ToolBar orientation="VERTICAL" prefWidth="40.0" BorderPane.alignment="CENTER">
+              <items>
+                  <Group>
+                     <children>
+                      <Button mnemonicParsing="false" rotate="90.0" text="Properties" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Button mnemonicParsing="false" rotate="90.0" text="Print Settings" />
+                     </children>
+                  </Group>
+              </items>
+            </ToolBar>
+         </right>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <left>
+                  <AnchorPane>
+                     <children>
+                        <TitledPane animated="false" collapsible="false" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+               </left>
+               <bottom>
+                  <StackPane>
+                     <children>
+                        <TitledPane animated="false" collapsible="false" prefHeight="175.0" BorderPane.alignment="CENTER">
+                           <content>
+                              <Label text="Label" />
+                           </content>
+                           <graphic>
+                              <HBox alignment="BASELINE_LEFT">
+                                 <children>
+                                    <Label text="Task Output" />
+                                    <Region prefWidth="200.0" />
+                                    <ToggleButton mnemonicParsing="false" selected="true" text="Hide" />
+                                 </children>
+                              </HBox>
+                           </graphic></TitledPane>
+                     </children>
+                  </StackPane>
+               </bottom>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
