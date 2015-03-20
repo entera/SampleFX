@@ -9,7 +9,8 @@ project(":") {
     }
 
     // task to print gradle and groovy versions.
-    task gradleVersion(group: "help") << {
+    task versions(group: "help") << {
+        println "Java version: ${System.getProperty("java.version")}"
         println "Gradle version: ${project.gradle.gradleVersion}"
         println "Groovy version: ${GroovySystem.version}"
     }

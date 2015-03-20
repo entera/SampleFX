@@ -30,7 +30,7 @@ class WorkbenchSkin extends BehaviorSkinBase<Workbench, WorkbenchBehavior> {
                          WorkbenchBehavior behavior) {
         super(control, behavior)
 
-        def rootNode = ControlUtils.loadFxmlNodes(this.class.getResource(FXML_FILE), this)
+        def rootNode = ControlUtils.loadFxmlResource(this.class.getResource(FXML_FILE), this)
         this.installBehaviour()
         this.installSkin(rootNode)
     }
@@ -43,6 +43,7 @@ class WorkbenchSkin extends BehaviorSkinBase<Workbench, WorkbenchBehavior> {
 
     private void installSkin(Parent rootNode) {
         this.children.setAll(rootNode.childrenUnmodifiable)
+        this.skinnable.stylesheets.setAll(rootNode.stylesheets)
     }
 
 }

@@ -27,13 +27,12 @@ final class ControlUtils {
      * @param controller The controller object.
      * @return The parent node from the FXML file.
      */
-    static Parent loadFxmlNodes(URL location,
-                                Object controller) {
-        def fxmlLoader = new FXMLLoader()
-        fxmlLoader.location = location
-        fxmlLoader.controller = controller
-        def rootNode = fxmlLoader.load() as Parent
-        return rootNode
+    static Parent loadFxmlResource(URL location,
+                                   Object controller) {
+        def loader = new FXMLLoader(location)
+        loader.controller = controller
+        loader.load()
+        return loader.root
     }
 
 }
