@@ -4,12 +4,9 @@ import java.util.concurrent.TimeUnit
 import javafx.geometry.BoundingBox
 import javafx.geometry.Bounds
 import javafx.geometry.Side
-import javafx.scene.Group
 import javafx.scene.Node
 import javafx.scene.Scene
-import javafx.scene.layout.HBox
-import javafx.scene.layout.Priority
-import javafx.scene.layout.Region
+import javafx.stage.Stage
 
 import com.google.common.base.Predicate
 import org.hamcrest.Matcher
@@ -20,7 +17,9 @@ import de.entera.samplefx.utility.FxSpecification
 import static org.hamcrest.Matchers.equalTo
 import static org.hamcrest.Matchers.not
 import static org.testfx.api.FxAssert.verifyThat
+import static org.testfx.api.FxToolkit.registerStage
 import static org.testfx.api.FxToolkit.setupScene
+import static org.testfx.api.FxToolkit.setupStage
 import static org.testfx.api.FxToolkit.showStage
 
 class WorkbenchSpec extends FxSpecification {
@@ -35,7 +34,12 @@ class WorkbenchSpec extends FxSpecification {
     // FIXTURE METHODS.
     //---------------------------------------------------------------------------------------------
 
+    def setupSpec() {
+        registerStage { new Stage() }
+    }
+
     def setup() {
+        setupStage { stage -> stage.title = "Workbench" }
         setupScene() {
             workbench = new Workbench()
             return new Scene(workbench, 700, 550)
@@ -52,24 +56,10 @@ class WorkbenchSpec extends FxSpecification {
         verifyThat ".workbench", equalTo(workbench)
     }
 
-    def "xxx"() {
+    def "show workbench"() {
         setup:
-        for (Group fill in fx.lookup(".fill").queryAll()) {
-            def width = (fill.parent as Region).width
-            (fill.children[0] as Region).prefWidth = width
-        }
-        for (Group fill in fx.lookup(".fill-height").queryAll()) {
-            def width = (fill.parent as Region).height
-            (fill.children[0] as Region).prefWidth = width
-        }
-
-        for (Region spacer in fx.lookup(".spacer").queryAll()) {
-            println spacer
-            //def spacer = new Region()
-            HBox.setHgrow(spacer, Priority.ALWAYS)
-            spacer.minWidth = Region.USE_PREF_SIZE
-            spacer.prefWidth = Region.USE_COMPUTED_SIZE
-        }
+        workbench.topToolBar.visible = false
+        workbench.topToolBar.managed = false
         fx.sleep(30, TimeUnit.MINUTES)
     }
 

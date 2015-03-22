@@ -6,57 +6,57 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane fx:id="container" prefHeight="550.0" prefWidth="700.0" stylesheets="@workbench.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="container" prefHeight="550.0" prefWidth="700.0" styleClass="workbench" stylesheets="@workbench.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane fx:id="toolButtons">
          <top>
-            <StackPane>
-               <children>
-                  <Group styleClass="fill">
-                     <children>
-                        <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="top">
-                          <items>
-                              <Region minWidth="-Infinity" prefWidth="25.0" />
-                              <ToggleButton mnemonicParsing="false" text="View T1" />
-                              <ToggleButton mnemonicParsing="false" text="View T2" />
-                              <Region minWidth="-Infinity" prefWidth="100.0" styleClass="spacer" />
-                              <ToggleButton mnemonicParsing="false" text="View T3" />
-                              <ToggleButton mnemonicParsing="false" text="View T4" />
-                              <Region minWidth="-Infinity" prefWidth="25.0" />
-                          </items>
-                        </ToolBar>
-                     </children>
-                  </Group>
-               </children>
-            </StackPane>
+            <ToolBar fx:id="topToolBar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="top">
+              <items>
+                  <Region minWidth="-Infinity" prefWidth="25.0" />
+                  <ToggleButton mnemonicParsing="false" text="View T1" />
+                  <ToggleButton mnemonicParsing="false" text="View T2" />
+                  <Region minWidth="-Infinity" prefWidth="100.0" styleClass="spacer" />
+                  <ToggleButton mnemonicParsing="false" text="View T3" />
+                  <ToggleButton mnemonicParsing="false" text="View T4" />
+                  <Region minWidth="-Infinity" prefWidth="25.0" />
+              </items>
+            </ToolBar>
          </top>
          <left>
-            <StackPane>
-               <children>
-                  <Group styleClass="fill-height">
+            <ToolBar fx:id="leftToolBar" nodeOrientation="LEFT_TO_RIGHT" orientation="VERTICAL" styleClass="left">
+               <items>
+                  <Group>
                      <children>
-                        <ToolBar nodeOrientation="RIGHT_TO_LEFT" rotate="-90.0" styleClass="left">
-                           <items>
-                              <ToggleButton mnemonicParsing="false" text="View L1" />
-                              <ToggleButton mnemonicParsing="false" text="View L2" />
-                              <Region minWidth="-Infinity" prefWidth="100.0" styleClass="spacer" />
-                              <ToggleButton mnemonicParsing="false" text="View L3" />
-                              <ToggleButton mnemonicParsing="false" text="View L4" />
-                           </items>
-                        </ToolBar>
+                        <ToggleButton mnemonicParsing="false" rotate="-90.0" selected="true" text="View L1" />
                      </children>
                   </Group>
-               </children>
-            </StackPane>
+                  <Group>
+                     <children>
+                        <ToggleButton mnemonicParsing="false" rotate="-90.0" text="View L2" />
+                     </children>
+                  </Group>
+                  <Region minWidth="-Infinity" styleClass="spacer" />
+                  <Group>
+                     <children>
+                        <ToggleButton mnemonicParsing="false" rotate="-90.0" text="View L3" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <ToggleButton mnemonicParsing="false" rotate="-90.0" text="View L4" />
+                     </children>
+                  </Group>
+               </items>
+            </ToolBar>
          </left>
          <center>
             <BorderPane fx:id="toolContainers" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <left>
                   <StackPane>
                      <children>
-                        <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+                        <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="200.0" styleClass="left" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
                            <graphic>
-                              <HBox alignment="BASELINE_LEFT" spacing="10.0">
+                              <HBox alignment="BASELINE_LEFT" spacing="10.0" styleClass="fill">
                                  <children>
                                     <Label text="View L1" />
                                     <Region prefWidth="50.0" styleClass="spacer" HBox.hgrow="ALWAYS" />
@@ -68,18 +68,19 @@
                               </HBox>
                            </graphic>
                         </TitledPane>
+                        <Label text="Content" />
                      </children>
                   </StackPane>
                </left>
                <bottom>
                   <StackPane>
                      <children>
-                        <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="175.0" BorderPane.alignment="CENTER">
+                        <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="150.0" styleClass="bottom" BorderPane.alignment="CENTER">
                            <content>
-                              <Label text="Label" />
+                              <Label text="Content" />
                            </content>
                            <graphic>
-                              <HBox alignment="BASELINE_LEFT" spacing="10.0">
+                              <HBox alignment="BASELINE_LEFT" spacing="10.0" styleClass="fill">
                                  <children>
                                     <Label text="View B1" />
                                     <Region prefWidth="200.0" styleClass="spacer">
@@ -99,47 +100,42 @@
                   </StackPane>
                </bottom>
                <center>
-                  <StackPane fx:id="contentContainer" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                  <StackPane fx:id="contentContainer" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Content" />
+                     </children></StackPane>
                </center>
             </BorderPane>
          </center>
          <bottom>
-            <StackPane>
-               <children>
-                  <Group styleClass="fill" BorderPane.alignment="TOP_LEFT">
-                     <children>
-                        <ToolBar nodeOrientation="LEFT_TO_RIGHT" styleClass="bottom">
-                           <items>
-                              <Region minWidth="-Infinity" prefWidth="25.0" />
-                              <ToggleButton mnemonicParsing="false" text="View B1" />
-                              <ToggleButton mnemonicParsing="false" text="View B2" />
-                              <Region minWidth="-Infinity" prefWidth="100.0" styleClass="spacer" />
-                              <ToggleButton mnemonicParsing="false" text="View B3" />
-                              <ToggleButton mnemonicParsing="false" text="View B4" />
-                              <Region minWidth="-Infinity" prefWidth="25.0" />
-                           </items>
-                        </ToolBar>
-                     </children>
-                  </Group>
-               </children>
-            </StackPane>
+            <ToolBar fx:id="bottomToolBar" nodeOrientation="LEFT_TO_RIGHT" styleClass="bottom">
+               <items>
+                  <Region minWidth="-Infinity" prefWidth="25.0" />
+                  <ToggleButton mnemonicParsing="false" selected="true" text="View B1" />
+                  <ToggleButton mnemonicParsing="false" text="View B2" />
+                  <Region minWidth="-Infinity" prefWidth="100.0" styleClass="spacer" />
+                  <ToggleButton mnemonicParsing="false" text="View B3" />
+                  <ToggleButton mnemonicParsing="false" text="View B4" />
+                  <Region minWidth="-Infinity" prefWidth="25.0" />
+               </items>
+            </ToolBar>
          </bottom>
          <right>
-            <StackPane>
-               <children>
-                  <Group styleClass="fill-height" BorderPane.alignment="TOP_LEFT">
+            <ToolBar fx:id="rightToolBar" nodeOrientation="LEFT_TO_RIGHT" orientation="VERTICAL" styleClass="right">
+               <items>
+                  <Group>
                      <children>
-                        <ToolBar nodeOrientation="LEFT_TO_RIGHT" rotate="90.0" styleClass="right">
-                           <items>
-                              <ToggleButton mnemonicParsing="false" text="View R1" />
-                              <ToggleButton mnemonicParsing="false" text="View R2" />
-                              <Region minWidth="-Infinity" prefWidth="100.0" styleClass="spacer" />
-                           </items>
-                        </ToolBar>
+                        <ToggleButton mnemonicParsing="false" rotate="90.0" text="View R1" />
                      </children>
                   </Group>
-               </children>
-            </StackPane>
+                  <Group>
+                     <children>
+                        <ToggleButton mnemonicParsing="false" rotate="90.0" text="View R2" />
+                     </children>
+                  </Group>
+                  <Region minWidth="-Infinity" styleClass="spacer" />
+               </items>
+            </ToolBar>
          </right>
       </BorderPane>
    </children>
