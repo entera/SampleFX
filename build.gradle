@@ -1,8 +1,11 @@
-// add assemble and clean tasks.
-apply plugin: "base"
+//-------------------------------------------------------------------------------------------------
+// ROOT PROJECT.
+//-------------------------------------------------------------------------------------------------
 
-// configuration for the root project.
-project(":") {
+project(":") { project ->
+    // provide assemble and clean tasks.
+    apply plugin: "base"
+
     // task to add gradle wrapper files.
     task wrapper(type: Wrapper, group: "build setup") {
         gradleVersion = "2.3"
@@ -16,7 +19,10 @@ project(":") {
     }
 }
 
-// configuration for all projects.
+//-------------------------------------------------------------------------------------------------
+// ALL PROJECTS.
+//-------------------------------------------------------------------------------------------------
+
 allprojects { project ->
     // task to create main and test source directories.
     task sourceDirs(group: "build setup") << {
@@ -27,8 +33,11 @@ allprojects { project ->
     }
 }
 
-// configuration for all subprojects.
-subprojects {
+//-------------------------------------------------------------------------------------------------
+// ALL SUBPROJECTS.
+//-------------------------------------------------------------------------------------------------
+
+subprojects { project ->
     // provide java configurations and tasks.
     apply plugin: "java"
 
@@ -37,6 +46,12 @@ subprojects {
         if (project.hasProperty("useMavenLocal")) {
             mavenLocal()
         }
+    }
+
+    dependencies {
+        // dependency to javafx 8.
+        def javaRuntimeDir = new File(System.properties["java.home"] as String)
+        compile files("${javaRuntimeDir}/lib/ext/jfxrt.jar")
     }
 
     // source code compatible to java 8.

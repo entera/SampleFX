@@ -5,10 +5,6 @@ repositories {
 }
 
 dependencies {
-    // javafx runtime.
-    def gradleJavaRuntimeDir = new File(System.properties["java.home"] as String)
-    compile files("${gradleJavaRuntimeDir}/lib/ext/jfxrt.jar")
-
     // groovy compiler and library.
     compile "org.codehaus.groovy:groovy-all:2.4.2"
 
