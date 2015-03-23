@@ -15,7 +15,7 @@
                   <Region minWidth="-Infinity" prefWidth="25.0" />
                   <ToggleButton mnemonicParsing="false" text="View T1" />
                   <ToggleButton mnemonicParsing="false" text="View T2" />
-                  <Region minWidth="-Infinity" prefWidth="100.0" styleClass="spacer" />
+                  <Region prefWidth="25.0" styleClass="spacer" />
                   <ToggleButton mnemonicParsing="false" text="View T3" />
                   <ToggleButton mnemonicParsing="false" text="View T4" />
                   <Region minWidth="-Infinity" prefWidth="25.0" />
@@ -35,7 +35,7 @@
                         <ToggleButton mnemonicParsing="false" rotate="-90.0" text="View L2" />
                      </children>
                   </Group>
-                  <Region minWidth="-Infinity" styleClass="spacer" />
+                  <Region prefHeight="25.0" styleClass="spacer" />
                   <Group>
                      <children>
                         <ToggleButton mnemonicParsing="false" rotate="-90.0" text="View L3" />
@@ -52,14 +52,14 @@
          <center>
             <BorderPane fx:id="toolContainers" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <left>
-                  <StackPane>
+                  <StackPane fx:id="leftToolContainer">
                      <children>
                         <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="200.0" styleClass="left" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
                            <graphic>
                               <HBox alignment="BASELINE_LEFT" spacing="10.0" styleClass="fill">
                                  <children>
                                     <Label text="View L1" />
-                                    <Region prefWidth="50.0" styleClass="spacer" HBox.hgrow="ALWAYS" />
+                                    <Region prefWidth="25.0" styleClass="spacer" HBox.hgrow="ALWAYS" />
                                     <Button mnemonicParsing="false" text="Hide" />
                                  </children>
                                  <padding>
@@ -70,10 +70,14 @@
                         </TitledPane>
                         <Label text="Content" />
                      </children>
+                     <styleClass>
+                        <String fx:value="left" />
+                        <String fx:value="tool-container" />
+                     </styleClass>
                   </StackPane>
                </left>
                <bottom>
-                  <StackPane>
+                  <StackPane fx:id="bottomToolContainer">
                      <children>
                         <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="150.0" styleClass="bottom" BorderPane.alignment="CENTER">
                            <content>
@@ -83,7 +87,7 @@
                               <HBox alignment="BASELINE_LEFT" spacing="10.0" styleClass="fill">
                                  <children>
                                     <Label text="View B1" />
-                                    <Region prefWidth="200.0" styleClass="spacer">
+                                    <Region prefWidth="25.0" styleClass="spacer">
                                        <HBox.margin>
                                           <Insets />
                                        </HBox.margin>
@@ -97,14 +101,34 @@
                            </graphic>
                         </TitledPane>
                      </children>
+                     <styleClass>
+                        <String fx:value="bottom" />
+                        <String fx:value="tool-container" />
+                     </styleClass>
                   </StackPane>
                </bottom>
                <center>
-                  <StackPane fx:id="contentContainer" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <StackPane fx:id="contentContainer" prefHeight="150.0" prefWidth="200.0" styleClass="content-container" BorderPane.alignment="CENTER">
                      <children>
                         <Label text="Content" />
                      </children></StackPane>
                </center>
+               <right>
+                  <StackPane fx:id="rightToolContainer" BorderPane.alignment="CENTER">
+                     <styleClass>
+                        <String fx:value="right" />
+                        <String fx:value="tool-container" />
+                     </styleClass>
+                  </StackPane>
+               </right>
+               <top>
+                  <StackPane fx:id="topToolContainer" BorderPane.alignment="CENTER">
+                     <styleClass>
+                        <String fx:value="top" />
+                        <String fx:value="tool-container" />
+                     </styleClass>
+                  </StackPane>
+               </top>
             </BorderPane>
          </center>
          <bottom>
@@ -113,7 +137,7 @@
                   <Region minWidth="-Infinity" prefWidth="25.0" />
                   <ToggleButton mnemonicParsing="false" selected="true" text="View B1" />
                   <ToggleButton mnemonicParsing="false" text="View B2" />
-                  <Region minWidth="-Infinity" prefWidth="100.0" styleClass="spacer" />
+                  <Region prefWidth="25.0" styleClass="spacer" />
                   <ToggleButton mnemonicParsing="false" text="View B3" />
                   <ToggleButton mnemonicParsing="false" text="View B4" />
                   <Region minWidth="-Infinity" prefWidth="25.0" />
@@ -133,7 +157,7 @@
                         <ToggleButton mnemonicParsing="false" rotate="90.0" text="View R2" />
                      </children>
                   </Group>
-                  <Region minWidth="-Infinity" styleClass="spacer" />
+                  <Region prefHeight="25.0" styleClass="spacer" />
                </items>
             </ToolBar>
          </right>

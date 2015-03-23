@@ -60,7 +60,7 @@ class WorkbenchSpec extends FxSpecification {
         setup:
         workbench.topToolBar.visible = false
         workbench.topToolBar.managed = false
-        fx.sleep(30, TimeUnit.MINUTES)
+        fx.sleep(0, TimeUnit.MINUTES)
     }
 
     def "has content container"() {

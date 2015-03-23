@@ -24,6 +24,13 @@ class WorkbenchSkin extends BehaviorSkinBase<Workbench, WorkbenchBehavior> {
     // FIEDLS.
     //---------------------------------------------------------------------------------------------
 
+    @FXML StackPane contentContainer
+
+    @FXML StackPane leftToolContainer
+    @FXML StackPane rightToolContainer
+    @FXML StackPane topToolContainer
+    @FXML StackPane bottomToolContainer
+
     @FXML ToolBar leftToolBar
     @FXML ToolBar rightToolBar
     @FXML ToolBar topToolBar

@@ -3,6 +3,7 @@ package de.entera.samplefx.workbench
 import javafx.scene.control.Control
 import javafx.scene.control.Skin
 import javafx.scene.control.ToolBar
+import javafx.scene.layout.StackPane
 
 import com.sun.javafx.scene.control.behavior.BehaviorBase
 import com.sun.javafx.scene.control.behavior.KeyBinding
@@ -27,10 +28,17 @@ class Workbench extends Control {
     // METHODS.
     //---------------------------------------------------------------------------------------------
 
-    ToolBar getLeftToolBar() { return (this.skin as WorkbenchSkin).leftToolBar }
-    ToolBar getRightToolBar() { return (this.skin as WorkbenchSkin).rightToolBar }
-    ToolBar getTopToolBar() { return (this.skin as WorkbenchSkin).topToolBar }
-    ToolBar getBottomToolBar() { return (this.skin as WorkbenchSkin).bottomToolBar }
+    StackPane getContentContainer() { return this.workbenchSkin.contentContainer }
+
+    StackPane getLeftToolContainer() { return this.workbenchSkin.leftToolContainer }
+    StackPane getRightToolContainer() { return this.workbenchSkin.rightToolContainer }
+    StackPane getTopToolContainer() { return this.workbenchSkin.topToolContainer }
+    StackPane getBottomToolContainer() { return this.workbenchSkin.bottomToolContainer }
+
+    ToolBar getLeftToolBar() { return this.workbenchSkin.leftToolBar }
+    ToolBar getRightToolBar() { return this.workbenchSkin.rightToolBar }
+    ToolBar getTopToolBar() { return this.workbenchSkin.topToolBar }
+    ToolBar getBottomToolBar() { return this.workbenchSkin.bottomToolBar }
 
     //---------------------------------------------------------------------------------------------
     // PROTECTED METHODS.
@@ -38,6 +46,14 @@ class Workbench extends Control {
 
     protected Skin<Workbench> createDefaultSkin() {
         return new WorkbenchSkin(this, new WorkbenchBehavior(this))
+    }
+
+    //---------------------------------------------------------------------------------------------
+    // PRIVATE METHODS.
+    //---------------------------------------------------------------------------------------------
+
+    private WorkbenchSkin getWorkbenchSkin() {
+        return this.skin as WorkbenchSkin
     }
 
     //---------------------------------------------------------------------------------------------

@@ -4,21 +4,26 @@
     -fx-background-radius: 5, 4, 3;
 }
 
+.workbench .tool-bar {
+    -fx-background-color: -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0, 1;
+}
+
 .workbench .tool-bar.top {
-    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
-    -fx-background-insets: 0, 0 0 1 0, 1 1 2 1;
+    -fx-border-color: -fx-outer-border;
+    -fx-border-insets: -1 -1 0 -1;
 }
 .workbench .tool-bar.right {
-    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
-    -fx-background-insets: 0, 0 0 0 1, 1 1 1 2;
+    -fx-border-color: -fx-outer-border;
+    -fx-border-insets: -1 -1 -1 0;
 }
 .workbench .tool-bar.bottom {
-    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
-    -fx-background-insets: 0, 1 0 0 0, 2 1 1 1;
+    -fx-border-color: -fx-outer-border;
+    -fx-border-insets: 0 -1 -1 -1;
 }
 .workbench .tool-bar.left {
-    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
-    -fx-background-insets: 0, 0 1 0 0, 1 2 1 1;
+    -fx-border-color: -fx-outer-border;
+    -fx-border-insets: -1 0 -1 -1;
 }
 
 
