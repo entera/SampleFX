@@ -9,10 +9,10 @@ import javafx.scene.Scene
 import javafx.stage.Stage
 
 import com.google.common.base.Predicate
+import de.entera.samplefx.utility.FxSpecification
 import org.hamcrest.Matcher
 import org.testfx.matcher.base.GeneralMatchers
-
-import de.entera.samplefx.utility.FxSpecification
+import spock.lang.Ignore
 
 import static org.hamcrest.Matchers.equalTo
 import static org.hamcrest.Matchers.not
@@ -56,11 +56,10 @@ class WorkbenchSpec extends FxSpecification {
         verifyThat ".workbench", equalTo(workbench)
     }
 
+    @Ignore
     def "show workbench"() {
         setup:
-        workbench.topToolBar.visible = false
-        workbench.topToolBar.managed = false
-        fx.sleep(0, TimeUnit.MINUTES)
+        fx.sleep(30, TimeUnit.MINUTES)
     }
 
     def "has content container"() {

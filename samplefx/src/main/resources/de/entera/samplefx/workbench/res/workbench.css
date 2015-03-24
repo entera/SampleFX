@@ -1,52 +1,62 @@
-.button:focused {
-    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
-    -fx-background-insets: 0, 1, 2;
-    -fx-background-radius: 5, 4, 3;
-}
+
+/* TOOLBAR */
 
 .workbench .tool-bar {
     -fx-background-color: -fx-inner-border, -fx-body-color;
     -fx-background-insets: 0, 1;
+    -fx-spacing: 0;
+    -fx-padding: 0;
 }
 
 .workbench .tool-bar.top {
     -fx-border-color: -fx-outer-border;
     -fx-border-insets: -1 -1 0 -1;
 }
+
 .workbench .tool-bar.right {
     -fx-border-color: -fx-outer-border;
     -fx-border-insets: -1 -1 -1 0;
 }
+
 .workbench .tool-bar.bottom {
     -fx-border-color: -fx-outer-border;
     -fx-border-insets: 0 -1 -1 -1;
 }
+
 .workbench .tool-bar.left {
     -fx-border-color: -fx-outer-border;
     -fx-border-insets: -1 0 -1 -1;
 }
 
+/* TOOL-CONTAINER */
 
-.toggle-button {
-    -fx-background-color: transparent;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
+.tool-container.top {
+    -fx-border-color: -fx-outer-border;
+    -fx-border-insets: -1 -1 0 -1;
 }
-.toggle-button:focused {
-    -fx-background-color: transparent;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
+
+.tool-container.right {
+    -fx-border-color: -fx-outer-border;
+    -fx-border-insets: -1 -1 -1 0;
 }
-.toggle-button:hover {
-    -fx-background-color: derive(-fx-base, -10%);
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
+
+.tool-container.bottom {
+    -fx-border-color: -fx-outer-border;
+    -fx-border-insets: 0 -1 -1 -1;
 }
-.toggle-button:selected {
-    -fx-background-color: -fx-outer-border;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
+
+.tool-container.left {
+    -fx-border-color: -fx-outer-border;
+    -fx-border-insets: -1 0 -1 -1;
 }
+
+/* CONTENT-CONTAINER */
+
+.content-container {
+    -fx-background-color: -fx-body-color;
+}
+
+/* BUTTON */
 
 .button, .button:focused {
     -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
@@ -54,9 +64,47 @@
     -fx-background-radius: 0, 0, 0;
 }
 
-.tool-bar {
-    -fx-spacing: 0;
+.button:focused {
+    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 5, 4, 3;
 }
+
+/* TOGGLE-BUTTON */
+
+.toggle-button {
+    -fx-outer-border: none;
+}
+
+.toggle-button:selected {
+    -fx-outer-border: derive(-fx-color, -23%);
+}
+
+.toggle-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.toggle-button:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.toggle-button:hover {
+    -fx-background-color: derive(-fx-base, -10%);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.toggle-button:selected {
+    -fx-background-color: -fx-outer-border;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+/* TITLED-PANE */
 
 .titled-pane {
     -fx-background-radius: 0;
@@ -66,47 +114,13 @@
     -fx-padding: 0;
 }
 
+.titled-pane > .title {
+    -fx-background-color: -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0, 0;
+}
+
 .titled-pane > .content {
     -fx-border-color: -fx-outer-border;
     -fx-border-insets: 0 -1 -1 -1;
-}
-
-
-.titled-pane.left {
-    -fx-border-color: -fx-outer-border;
-    -fx-border-insets: -1 0 -1 -1;
-}
-
-#contentContainer {
-    -fx-background-color: -fx-body-color;
-}
-
-.titled-pane.bottom {
-    -fx-border-color: -fx-outer-border;
-    -fx-border-insets: 0 -1 -1 -1;
-}
-
-
-.titled-pane.left > .title {
-    -fx-background-color: -fx-inner-border, -fx-body-color;
-    -fx-background-insets: 0, 1;
-    -fx-background-radius: 0, 0;
-}
-.titled-pane.bottom > .title {
-    -fx-background-color: -fx-inner-border, -fx-body-color;
-    -fx-background-insets: 0, 1;
-    -fx-background-radius: 0, 0;
-}
-
-
-.tool-bar {
-    -fx-padding: 0;
-}
-
-.toggle-button {
-    -fx-outer-border: none;
-}
-
-.toggle-button:selected {
-    -fx-outer-border: derive(-fx-color, -23%);
 }
